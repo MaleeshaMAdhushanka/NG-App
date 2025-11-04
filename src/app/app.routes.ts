@@ -1,3 +1,13 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+//we define our first route hire ? emty which means we are at the top or root
+export const routes: Routes = [{
+   path: '',
+   pathMatch: 'full',
+   loadComponent: () => {
+    return import('./home/home').then(
+        m => m.Home
+    )
+   },
+},
+];
