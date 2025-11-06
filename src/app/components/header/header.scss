@@ -1,4 +1,5 @@
 
+//imediate span
 header {
     display: flex;
     padding-inline:  16px;
@@ -8,5 +9,29 @@ header {
     align-items: center;
     justify-content: space-between;
 
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        > span {
+           &:hover {
+            color: #777;
+            cursor: pointer;
+           } 
+        }
+        
+    }
+    ul {
+        list-style: none;
+        li {
+           &:hover {
+            color: #777;
+            cursor: pointer;
+           } 
+        }
+
+    }
 
 }
