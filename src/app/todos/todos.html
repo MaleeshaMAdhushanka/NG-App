@@ -19,6 +19,10 @@
 
  <h3>Todos List </h3>
 
+ <!-- Loading the data form API  show some loading text for-->
+  <!-- If their is no items in the list is empty than show loading-->
+ <!-- <p *ngIf="!todoItems().length">Loading ....</p> -->
+
  <ul class ="todos">
   @for (todo of todoItems(); track todo.id) {
     <li class = "todos_item">
