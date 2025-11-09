@@ -1,1 +1,30 @@
-<p>todos works!</p>
+<!-- <p>{{ todoItems()[0].title }}</p> -->
+ <!-- Using Angular built in control flow -->
+  
+ <!-- /loop for the array -->
+  <!-- When use the for loop
+   we also tack and we track on the basis of
+   what is unique among all these items 
+   in our service uniqueness is the ID every to-do item has to have a unique ID
+
+    @for(todo of todoItems(); track $index){
+  <p>{{ todo.title }}</p>
+ }
+   -->
+ <!-- improve performance using the for loop -->
+
+ <!-- @for(todo of todoItems(); track todo.id){
+  <p>{{ todo.title }}</p>
+ } -->
+
+ <h3>Todos List </h3>
+
+ <ul class ="todos">
+  @for (todo of todoItems(); track todo.id) {
+    <li class = "todos_item">
+       <input id="todo-{{ todo.id }}" type="checkbox" [value] ="todo.completed"/>
+       <label for="todo-{{ todo.id }}">{{ todo.title }}</label>     
+    </li>
+
+  }
+ </ul>
