@@ -23,12 +23,19 @@
   <!-- If their is no items in the list is empty than show loading-->
  <!-- <p *ngIf="!todoItems().length">Loading ....</p> -->
 
+ @if(!todoItems().length){
+  <p>Loading ..</p>
+ }
  <ul class ="todos">
   @for (todo of todoItems(); track todo.id) {
-    <li class = "todos_item">
+    <!-- <li class = "todos_item">
        <input id="todo-{{ todo.id }}" type="checkbox" [value] ="todo.completed"/>
        <label for="todo-{{ todo.id }}">{{ todo.title }}</label>     
-    </li>
+    </li> -->
+    <!-- I want to update the to-do in my todo items array  this is that if anything changes in the 
+     todo item it has to notify the parent component to-dos and the todos will update the array 
+     . when it Update the array which are being rendered automatically update in the particular case -->
+    <app-todo-item (todoToggled)="updateTodoItem($event)" [todo] ="todo"/>
 
   }
  </ul>
